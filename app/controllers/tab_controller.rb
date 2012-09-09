@@ -1,3 +1,5 @@
+require 'yaml'
+
 # tab_controller.rb
 #  
 # Copyright (C) 2008-2009  James Turnbull <james@lovedthanlost.net>
@@ -29,7 +31,7 @@ class TabController < ApplicationController
   end
 
   def system_show
-    @tab_text = Setting.plugin_redmine_tab['system_tab_text']
+    @tabs = YAML.load(Setting.plugin_redmine_tab['system_tab_text'])
     render :action => 'show'
   end
   

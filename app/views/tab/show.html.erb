@@ -1,5 +1,7 @@
-<% if @tab_text %>
+<% if @tabs %>
 
-  <%= @tab_text.html_safe %>
+	<% @tabs.each do |tab| %>
+    	<iframe src="<%= tab.url %>" width="100%" height="900" frameborder="0" scrolling="yes"></iframe>
+    <% end %>
 
 <% end %>
