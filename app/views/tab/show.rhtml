@@ -1,5 +1,7 @@
-<% if @tab_text %>
+<% if @tabs %>
 
-    <%= @tab_text %>
+	<% @tabs.each do |tab| %>
+    	<%= tab %>
+    <% end %>
 
 <% end %>

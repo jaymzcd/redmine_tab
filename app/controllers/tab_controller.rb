@@ -29,7 +29,8 @@ class TabController < ApplicationController
   end
 
   def system_show
-    @tab_text = Setting.plugin_redmine_tab['system_tab_text']
+    tab_text = Setting.plugin_redmine_tab['system_tab_text']
+    @tabs = YAML.load(tab_text)
     render :action => 'show'
   end
   
